@@ -1,27 +1,37 @@
 {
-	"name": "slim",
-	"displayName": "Slim",
-	"description": "Slim language support based on https://github.com/slim-template/ruby-slim.tmbundle",
-	"version": "0.0.1",
-	"publisher": "sianglim",
-  "icon": "images/slim.jpg",
-	"engines": {
-		"vscode": "^0.10.10"
-	},
-	"categories": [
-		"Languages"
-	],
-	"contributes": {
-		"languages": [{
-			"id": "slim",
-			"aliases": ["slim-lang", "slim"],
-			"extensions": [".slim", ".skim"],
-			"configuration": "./slim.configuration.json"
-		}],
-		"grammars": [{
-			"language": "slim",
-			"scopeName": "text.slim",
-			"path": "./syntaxes/slim.tmLanguage"
-		}]
-	}
+    "name": "slim",
+    "displayName": "Slim",
+    "description": "Slim language support based on https://github.com/slim-template/ruby-slim.tmbundle",
+    "version": "0.1.1",
+    "publisher": "sianglim",
+    "icon": "images/slim.jpg",
+    "engines": {
+        "vscode": "^0.10.10"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "slim",
+                "aliases": [
+                    "slim-lang",
+                    "slim"
+                ],
+                "extensions": [
+                    ".slim",
+                    ".skim"
+                ],
+                "configuration": "./slim.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "slim",
+                "scopeName": "text.slim",
+                "path": "./syntaxes/slim.tmLanguage"
+            }
+        ]
+    }
 }
