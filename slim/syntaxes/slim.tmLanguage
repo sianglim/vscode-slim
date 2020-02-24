@@ -274,30 +274,16 @@
 			<string>^(\s*)(/)\s*.*$</string>
 			<key>beginCaptures</key>
 			<dict>
-				<key>1</key>
+				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.section.comment.slim</string>
+					<string>comment.line.slash.slim</string>
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>^(?!\1  )</string>
+			<string>^(?!(\1\s)|\s*$)</string>
 			<key>name</key>
 			<string>comment.block.slim</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.section.comment.slim</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>^\s*(/)\s*\S.*$\n?</string>
-			<key>name</key>
-			<string>comment.line.slash.slim</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -335,7 +321,26 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*(\.|#|[a-zA-Z0-9]+)([\w-]+)?</string>
+			<string>^(\s*)(\||')\s*</string>
+			<key>comment</key>
+			<string>Verbatim text (can include HTML tags and copied lines)</string>
+			<key>end</key>
+			<string>^(?!(\1\s)|\s*$)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>text.html.basic</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#embedded-ruby</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\s*(\.|#|[-a-zA-Z0-9]+)([\w-]+)?</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -352,7 +357,7 @@
 			<key>comment</key>
 			<string>1 - dot OR hash OR any combination of word, number; 2 - OPTIONAL any combination of word, number, dash or underscore (following a . or</string>
 			<key>end</key>
-			<string>$|(?!\.|#|=|:|-|~|/|\}|\]|\*|\s?[\*\{])</string>
+			<string>$|(?!\.|#|:|-|~|/|\}|\]|\*|\s?[\*\{])</string>
 			<key>name</key>
 			<string>meta.tag</string>
 			<key>patterns</key>
@@ -760,7 +765,7 @@
 		<key>tag-attribute</key>
 		<dict>
 			<key>begin</key>
-			<string>([\w.#_-]+)=(?!\s)(true|false|nil)?(\s*\(|\{)?</string>
+			<string>([\w.#_-]+)(=)(?!\s)(true|false|nil)?(\s*\(|\{)?</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -771,11 +776,18 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
+					<string>punctuation.separator.key-value.html</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
 					<string>constant.language.slim</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>\}|\)|$</string>
+			<key>name</key>
+			<string>meta.attribute-with-value.slim</string>
 			<key>patterns</key>
 			<array>
 				<dict>
