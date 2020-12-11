@@ -649,7 +649,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\.|#)([\w\d\-]+)</string>
+			<string>(\.|#)([\w\d\-\:\/]+)</string>
 		</dict>
 		<key>rubyline</key>
 		<dict>
