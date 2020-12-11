@@ -1,5 +1,5 @@
 {
-    "name": "slim_tailwindcss",
+    "name": "slimtailwindcss",
     "displayName": "Slim-Sailwindcss",
     "description": "Slim language support based on https://github.com/killernova/vscode-slim.tmbundle, compatibe with tailwindcss",
     "version": "0.1.1",
