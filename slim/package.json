@@ -11,6 +11,11 @@
     "categories": [
         "Languages"
     ],
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/sianglim/vscode-slim.git"
+	},
+	"bugs": "https://github.com/sianglim/vscode-slim/issues",
     "contributes": {
         "languages": [
             {
